@@ -51,8 +51,7 @@ gym_arrays.forEach(gym => {
 		const raid_name = `${path.basename(gym,'.png')}_${path.basename(pokemon,'.png')}.png`;
 		const raid = path.join(output_path, raid_name);
 
-		mergeImages([{ src: gym, x: 0, y: 0 }, { src: pokemon, x: 16, y: 16 }], { Canvas: Canvas, format: 'image/png', width: 96, height: 96 })
-		//.then(b64 => fs.writeFile(raid, decodeBase64Image(b64).data))
+		mergeImages([{ src: gym, x: 0, y: 0 }, { src: pokemon, x: 16, y: 16 }], { Canvas: Canvas, format: 'image/png', width: 96, height: 96 })		
 		.then(b64 => new Promise(function (fulfill, reject){
 			fs.writeFile(raid, decodeBase64Image(b64).data, function (err, res){
 				if (err) reject(err);
@@ -61,14 +60,6 @@ gym_arrays.forEach(gym => {
 		}))
 		.catch(e => {
 			if (!e) console.log(e);
-		})		
+		})	
 	})
 })
-/*
-new Promise(function (fulfill, reject){
-	fs.writeFile(raid, decodeBase64Image(b64).data, function (err, res){
-		if (err) reject(err);
-		else fulfill(res);
-	});
-});
-*/
