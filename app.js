@@ -3,17 +3,17 @@ const Canvas = require('canvas');
 const fs = require("fs");
 const path = require('path');
 
-const background_images_path = 'C:\\Users\\ikae\\Desktop\\Test\\gym\\teams';
-const foreground_images_path = 'C:\\Users\\ikae\\Desktop\\Test\\gym\\icons';
-const output_path = 'C:\\Users\\ikae\\Desktop\\Test\\gym\\outputs';
+const background_images_path = '/Users/ikae/Development/images/gym';
+const foreground_images_path = '/Users/ikae/Development/images/pokemon';
+const output_path = '/Users/ikae/Development/images/raid';
 
 const output_options = {format: 'image/png', width: 96, height: 96};
 const background_offset = { x: 0, y: 0 };
-const foreground_offset = { x: 16, y: 16 };
+const foreground_offset = { x: 32, y: 32 };
 
 const pokemonWithImages = [
 	2, 3, 5, 6, 8, 9, 11, 28, 31, 34, 38, 59, 62, 65, 68, 71, 73, 76, 82, 89, 91, 94, 103, 105, 110, 112, 123, 125, 126, 129, 131, 134,
-	135, 136, 137, 139, 143, 144, 145, 146, 150, 153, 156, 159, 243, 244, 245, 248, 249, 250, 302
+	135, 136, 137, 139, 143, 144, 145, 146, 150, 151, 153, 156, 159, 231, 243, 244, 245, 248, 249, 250, 251, 302, 303, 359, 383
 ]
 
 function decodeBase64Image(dataString) 
